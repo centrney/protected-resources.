@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+<title>Protected Resource</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20xp;
+    }
+    input {
+        padding: 10px;
+        margin: 10px;
+        width:200px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <h1>Введіть пароль</h1>
+    <from onsubmit="return checkPassword(event)">
+        <input type="password" id="password" placeholder="Введіть пароль" required>
+        <br>
+        <button type="submit">Підтвердити</button>
+        </from>
+        <script>
+            function
+checkPassword(event) {
+event.preventDefault();
+const urlParams = new UrlSearchParams(window.location.search);
+const resourceId = urlParams.get('ad');
+const resources = {
+    "video1": {password: "29.06", link: "https://t.me/+tDk309xLJz5lOWIy"},
+    "video2": {password: "08.07", link: "https://t.me/+QeaKqBLVzmo0YTMy"},
+    "doc1": {password: "abcde", link: "https://t.me/schmalgauzen"}
+};
+const enteredPassword = document.getElementById('password').value;
+if
+(recources[resourceId] && resources[resourceId].password === enteredPassword) {
+    window.location.href= resources[resourceId].limk;
+    } else {
+        alert("Невірний пароль. Спробуйте ще раз.");
+    }
+}
+</script>
+</body>
+</html>
